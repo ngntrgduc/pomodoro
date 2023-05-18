@@ -1,9 +1,9 @@
 let interval;
-let startMinutes = 30;
+let startMinutes = 40;
 let minutes = startMinutes;
 let started = false;
 let relaxed = false;
-
+let bell = false;
 // document.body.style.overflow = 'hidden'; // Hide scrollbar
 
 function padding(number) {
@@ -17,6 +17,10 @@ function display(minutes, seconds=0) {
 }
 
 function alertMessage() {
+    if (bell) {
+        let audio = new Audio('assets/sounds/levelUp.wav');
+        audio.play();
+    } 
     alert('<(￣︶￣)> Done');
     clearInterval(interval); 
 }
@@ -33,7 +37,7 @@ function start(loop=false) {
                     return;
                 } else {
                     clearInterval(interval); 
-                    startMinutes = 30;
+                    startMinutes = 40;
                     start(loop=true)
                 }
             }
@@ -45,7 +49,7 @@ function start(loop=false) {
     }
 }
 
-function reset(time=30) {
+function reset(time=40) {
     startMinutes = time;
     display(startMinutes);
     clearInterval(interval);
@@ -80,6 +84,16 @@ function decreaseTime() {
         if (!relaxed) { startMinutes -= 5; } 
         else { startMinutes -= 1; }
         display(startMinutes);
+    }
+}
+
+function toggleBell() {
+    if (!bell) {
+        bell = true;
+        document.getElementById('bell').className = "fa-solid fa-bell"
+    } else {
+        bell = false;
+        document.getElementById('bell').className = "fa-regular fa-bell"
     }
 }
 
