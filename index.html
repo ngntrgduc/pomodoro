@@ -14,10 +14,19 @@
 </head>
 <body>
     <div class="main">
-        <p id="time" class="prevent-select"></p>
+        <div class="timer">
+            <a class="fa-solid fa-minus hide" onclick="decreaseTime()"></a>
+
+            <p id="time" class="prevent-select"></p>
+            
+            <a class="fa-solid fa-plus hide" onclick="increaseTime()"></a>
+        </div>
+        
         <div class="utils">
             <a class="fa-solid fa-play" onclick="start()"></a>
             <a class="fa-solid fa-rotate-right" onclick="reset()"></a>
+            <a class="fa-solid fa-moon" onclick="relax()"></a>
+            <!-- <a class="fa-solid fa-infinity" onclick="loop()"></a> -->
         </div>
     </div>
 </body>
