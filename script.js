@@ -2,6 +2,7 @@ let interval;
 let startMinutes = 30;
 let minutes = startMinutes;
 let started = false;
+let relaxed = false;
 
 function padding(number) {
     return number.toString().padStart(2, '0');
@@ -42,18 +43,17 @@ function start(loop=false) {
     }
 }
 
-function reset() {
-    startMinutes = 30;
-    display(startMinutes)
+function reset(time=30) {
+    startMinutes = time;
+    display(startMinutes);
     clearInterval(interval);
     started = false;
+    relaxed = false;
 }
 
 function relax() {
-    if (started) clearInterval(interval);
-    started = false;
-    startMinutes = 5;
-    display(startMinutes);
+    reset(5);
+    relaxed = true;
 }
 
 // function loop() {
@@ -66,14 +66,17 @@ function relax() {
 
 function increaseTime() {
     if (!started) {
-        startMinutes += 5;
+        if (!relaxed) { startMinutes += 5; } 
+        else { startMinutes += 1; }
         display(startMinutes);
     }
 }
 
 function decreaseTime() {
+    if (startMinutes == 0) return; // No time machine in here
     if (!started) {
-        startMinutes -= 5;
+        if (!relaxed) { startMinutes -= 5; } 
+        else { startMinutes -= 1; }
         display(startMinutes);
     }
 }
