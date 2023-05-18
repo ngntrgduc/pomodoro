@@ -4,6 +4,8 @@ let minutes = startMinutes;
 let started = false;
 let relaxed = false;
 
+// document.body.style.overflow = 'hidden'; // Hide scrollbar
+
 function padding(number) {
     return number.toString().padStart(2, '0');
 }
