@@ -10,15 +10,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <title>Pomodoro</title>
 </head>
 <body>
     <div class="main">
         <div class="timer">
             <a class="fa-solid fa-minus hide" onclick="decreaseTime()"></a>
-
             <p id="time" class="prevent-select"></p>
-            
             <a class="fa-solid fa-plus hide" onclick="increaseTime()"></a>
         </div>
         
@@ -26,7 +23,7 @@
             <a class="fa-solid fa-play" onclick="start()"></a>
             <a class="fa-solid fa-rotate-right" onclick="reset()"></a>
             <a class="fa-solid fa-moon" onclick="relax()"></a>
-            <!-- <a class="fa-solid fa-infinity" onclick="loop()"></a> -->
+            <a class="fa-solid fa-rotate" onclick="loop()"></a>
         </div>
     </div>
 </body>
