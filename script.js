@@ -18,6 +18,13 @@ function display(minutes, seconds=0) {
     document.title = time; // Update title
 }
 
+function resetPlayButton() {
+    if (!paused) {
+        paused = true;
+        document.getElementById("play").className = "fa-solid fa-play";
+    }
+}
+
 function alertMessage() {
     if (bell) {
         let audio = new Audio('assets/sounds/levelUp.wav');
@@ -42,7 +49,9 @@ function start() {
         let seconds = 60;
         interval = setInterval(function() {
             if (minutes <= 0 && seconds == 60) {
+                resetPlayButton();
                 alertMessage();
+                ended = true;
                 return;
             }
             if (seconds == 60) { minutes -= 1; }
@@ -60,10 +69,7 @@ function reset(time=40) {
     clearInterval(interval);
     started = false;
     relaxed = false;
-    if (!paused) {
-        paused = true;
-        document.getElementById("play").className = "fa-solid fa-play";
-    }
+    resetPlayButton();
 }
 
 function relax() {
