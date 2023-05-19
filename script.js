@@ -7,12 +7,12 @@ let relaxing = false;
 let bell = false;
 
 function padding(number) {
-    return number.toString().padStart(2, "0");
+    return number.toString().padStart(2, '0');
 }
 
 function display(minutes, seconds = 0) {
     if (seconds == 60) seconds = 0; // What time: 40:60 ?
-    let time = padding(minutes) + ":" + padding(seconds);
+    let time = padding(minutes) + ':' + padding(seconds);
     document.getElementById("time").innerHTML = time;
     document.title = time; // Update title
 }
@@ -62,7 +62,7 @@ function start() {
                 seconds--;
             }
             display(minutes, seconds);
-            if (!seconds) {
+            if (seconds == 0) {
                 seconds = 60;
             }
         }, 1000);
