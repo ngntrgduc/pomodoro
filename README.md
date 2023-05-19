@@ -1,5 +1,5 @@
 # Pomodoro
-![image](https://github.com/ngntrgduc/pomodoro/assets/47920109/2fce1656-fd2e-486c-9962-821423d6eec0)
+![image](https://github.com/ngntrgduc/pomodoro/assets/47920109/393f9f49-7f7f-4727-ad94-d797c175d355)
 
 ## Why reinvent the wheel?
 I have found some beautiful pomodoro websites like: [Tomato Timers](https://www.tomatotimers.com/), [Pomodoro Kitty](https://pomodorokitty.com/), [Pomofocus](https://pomofocus.io/), [studywithme.io](https://studywithme.io/aesthetic-pomodoro-timer/)... But there are not minimalist, so I have created one.
