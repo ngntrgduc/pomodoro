@@ -4,6 +4,8 @@ let minutes = startMinutes;
 let started = false;
 let relaxed = false;
 let bell = false;
+let paused = true;
+
 // document.body.style.overflow = 'hidden'; // Hide scrollbar
 
 function padding(number) {
@@ -11,7 +13,7 @@ function padding(number) {
 }
 
 function display(minutes, seconds=0) {
-    let time = padding(minutes) + ":"+ padding(seconds);
+    let time = padding(minutes) + ":" + padding(seconds);
     document.getElementById("time").innerHTML = time;
     document.title = time; // Update title
 }
@@ -21,27 +23,30 @@ function alertMessage() {
         let audio = new Audio('assets/sounds/levelUp.wav');
         audio.play();
     } 
-    alert('<(￣︶￣)> Done');
+    alert('＼(＾▽＾)／'); // Yayyyyyyyy
     clearInterval(interval); 
 }
 
-function start(loop=false) {
+function start() {
+    if (!paused) {
+        paused = true;
+        document.getElementById("play").className = "fa-solid fa-play";
+    } else {
+        paused = false;
+        document.getElementById("play").className = "fa-solid fa-stop";
+    }
+    
     if (!started) {
         minutes = startMinutes;
         started = true;
         let seconds = 60;
         interval = setInterval(function() {
-            if(minutes <= 0 && seconds == 60) {
-                if (!loop) {
-                    alertMessage();
-                    return;
-                } else {
-                    clearInterval(interval); 
-                    startMinutes = 40;
-                    start(loop=true)
-                }
+            if (minutes <= 0 && seconds == 60) {
+                alertMessage();
+                return;
             }
             if (seconds == 60) { minutes -= 1; }
+            if (paused) { seconds++ }
             seconds--;
             display(minutes, seconds);
             if(!seconds) { seconds = 60; }
@@ -61,14 +66,6 @@ function relax() {
     reset(5);
     relaxed = true;
 }
-
-// function loop() {
-//     clearInterval(interval);
-//     started = false;
-//     startMinutes = 30;
-//     start(loop=true)
-//     display(startMinutes)   
-// }
 
 function increaseTime() {
     if (!started) {
@@ -90,12 +87,11 @@ function decreaseTime() {
 function toggleBell() {
     if (!bell) {
         bell = true;
-        document.getElementById('bell').className = "fa-solid fa-bell"
+        document.getElementById("bell").className = "fa-solid fa-bell";
     } else {
         bell = false;
-        document.getElementById('bell').className = "fa-regular fa-bell"
+        document.getElementById("bell").className = "fa-regular fa-bell";
     }
 }
-
 
 reset() // Initial
