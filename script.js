@@ -1,16 +1,17 @@
 let interval;
 let startMinutes = 40;
 let minutes = startMinutes;
-let started = false;
+let running = false;
+let paused = true;
 let relaxed = false;
 let bell = false;
-let paused = true;
 
 function padding(number) {
     return number.toString().padStart(2, "0");
 }
 
 function display(minutes, seconds = 0) {
+    if (seconds == 60) seconds = 0; // What time: 40:60 ?
     let time = padding(minutes) + ":" + padding(seconds);
     document.getElementById("time").innerHTML = time;
     document.title = time; // Update title
@@ -44,9 +45,9 @@ function changePlayPauseButton() {
 
 function start() {
     changePlayPauseButton();
-    if (!started) {
+    if (!running) {
+        running = true;
         minutes = startMinutes;
-        started = true;
         let seconds = 60;
         interval = setInterval(function () {
             if (minutes <= 0 && seconds == 60) {
@@ -54,7 +55,7 @@ function start() {
                 alertMessage();
                 return;
             }
-            if (seconds == 60) {
+            if (seconds == 60 && !paused) {
                 minutes -= 1;
             }
             if (!paused) {
@@ -72,7 +73,7 @@ function reset(time = 40) {
     startMinutes = time;
     display(startMinutes);
     clearInterval(interval);
-    started = false;
+    running = false;
     relaxed = false;
     resetPlayButton();
 }
@@ -83,7 +84,7 @@ function relax() {
 }
 
 function increaseTime() {
-    if (!started) {
+    if (!running) {
         if (!relaxed) {
             startMinutes += 5;
         } else {
@@ -95,7 +96,7 @@ function increaseTime() {
 
 function decreaseTime() {
     if (startMinutes == 0) return; // No time machine in here
-    if (!started) {
+    if (!running) {
         if (!relaxed) {
             startMinutes -= 5;
         } else {
