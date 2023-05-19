@@ -35,7 +35,7 @@ function start() {
         paused = false;
         document.getElementById("play").className = "fa-solid fa-stop";
     }
-    
+
     if (!started) {
         minutes = startMinutes;
         started = true;
@@ -60,6 +60,10 @@ function reset(time=40) {
     clearInterval(interval);
     started = false;
     relaxed = false;
+    if (!paused) {
+        paused = true;
+        document.getElementById("play").className = "fa-solid fa-play";
+    }
 }
 
 function relax() {
