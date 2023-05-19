@@ -3,7 +3,7 @@ let startMinutes = 40;
 let minutes = startMinutes;
 let running = false;
 let paused = true;
-let relaxed = false;
+let relaxing = false;
 let bell = false;
 
 function padding(number) {
@@ -74,18 +74,18 @@ function reset(time = 40) {
     display(startMinutes);
     clearInterval(interval);
     running = false;
-    relaxed = false;
+    relaxing = false;
     resetPlayButton();
 }
 
 function relax() {
     reset(5);
-    relaxed = true;
+    relaxing = true;
 }
 
 function increaseTime() {
     if (!running) {
-        if (!relaxed) {
+        if (!relaxing) {
             startMinutes += 5;
         } else {
             startMinutes += 1;
@@ -97,7 +97,7 @@ function increaseTime() {
 function decreaseTime() {
     if (startMinutes == 0) return; // No time machine in here
     if (!running) {
-        if (!relaxed) {
+        if (!relaxing) {
             startMinutes -= 5;
         } else {
             startMinutes -= 1;
