@@ -1,14 +1,15 @@
 # Pomodoro
-![image](https://github.com/ngntrgduc/pomodoro/assets/47920109/393f9f49-7f7f-4727-ad94-d797c175d355)
 
 ## Why reinvent the wheel?
-I have found some beautiful pomodoro websites like: [Tomato Timers](https://www.tomatotimers.com/), [Pomodoro Kitty](https://pomodorokitty.com/), [Pomofocus](https://pomofocus.io/), [studywithme.io](https://studywithme.io/aesthetic-pomodoro-timer/)... But there are not minimalist, so I have created one.
+I have found some beautiful pomodoro websites like [Tomato Timers](https://www.tomatotimers.com/), [Pomodoro Kitty](https://pomodorokitty.com/), [Pomofocus](https://pomofocus.io/), [studywithme.io](https://studywithme.io/aesthetic-pomodoro-timer/)... But there are not minimalist, so I have created one.
 
 ## Features
-- **Minimalist**.
-- Aesthetic look.
-- Motivation sound when end a pomodoro.
-- Easy to config. You can fork this repo and make your own Pomodoro website.
+- **Minimalist**
+- Aesthetic look
+- Motivation sound when end a pomodoro
+- Easy to config. You can fork this repo and make your own Pomodoro website
+- Has stopwatch for **flowmodoro/flowtime**
+- Change the title automatically to the time at present, easy on the eyes
 
 ## Material
 - Theme: [Catppuccin - Mocha](https://github.com/catppuccin/catppuccin)
