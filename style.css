@@ -9,11 +9,6 @@ html {
     color: var(--text-bg);
 }
 
-.hide {
-    color: var(--bg);
-    transition-duration: 0.4s;
-}
-
 .timer {
     height: 300px;
     width: 500px;
@@ -21,18 +16,6 @@ html {
     justify-content: space-between;
     align-items: center;
     align-content: space-between;
-    transition-duration: 0.4s;
-}
-
-.timer:hover {
-    .hide {
-        color: var(--text-bg);
-        transition-duration: 0.4s;
-    }
-    .hide:hover {
-        color: var(--main);
-        transition-duration: 0.4s;
-    }
 }
 
 #time {

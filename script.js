@@ -116,4 +116,24 @@ function toggleBell() {
     }
 }
 
+function stopwatch() {
+    reset(0);
+    changePlayPauseButton();
+    if (!running) {
+        running = true;
+        minutes = startMinutes;
+        let seconds = 0;
+        interval = setInterval(function () {
+            if (!paused) {
+                seconds++;
+            }
+            if (seconds == 60 && !paused) {
+                minutes += 1;
+                seconds = 0;
+            }
+            display(minutes, seconds);
+        }, 1000);
+    }
+}
+
 reset(); // Initial
