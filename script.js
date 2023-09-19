@@ -13,7 +13,6 @@ function padding(number) {
 function display(minutes, seconds = 0) {
     if (seconds == 60) seconds = 0; // What time: 40:60 ?
     let time = padding(minutes) + ':' + padding(seconds);
-    document.getElementById("time").innerHTML = time;
     let hour = 0;
     if (minutes >= 60) {
         while (minutes >= 60) {
@@ -22,7 +21,7 @@ function display(minutes, seconds = 0) {
         }
         time = hour.toString() + ':' + padding(minutes) + ':' + padding(seconds);
     }
-    // document.getElementById("time").innerHTML = time;
+    document.getElementById("time").innerHTML = time;
     document.title = time; // Update title
 }
 
@@ -104,7 +103,7 @@ function increaseTime() {
 }
 
 function decreaseTime() {
-    if (startMinutes == 0) return; // No time machine in here
+    if (startMinutes == 0) return; // No time machine
     if (!running) {
         if (!relaxing) {
             startMinutes -= 5;

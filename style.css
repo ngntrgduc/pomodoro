@@ -7,15 +7,20 @@
 html {
     background-color: var(--bg);
     color: var(--text-bg);
+    
+}
+
+body {
+    overflow: hidden;
+    height: 100vh;
 }
 
 .timer {
-    height: 300px;
-    width: 500px;
+    height: 200px;
+    width: 670px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    align-content: space-between;
 }
 
 #time {
@@ -25,15 +30,19 @@ html {
 }
 
 .main {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    height: 100vh;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    align-content: center;
 }
 
-.utils {    
+.utils {
+    width: 500px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 a {
@@ -48,6 +57,6 @@ a:hover {
 
 .prevent-select {
     -webkit-user-select: none; /* Safari */
-    -ms-user-select: none; /* IE 10 and IE 11 */
-    user-select: none; /* Standard syntax */
+    -ms-user-select: none;     /* IE 10 and IE 11 */
+    user-select: none;         /* Standard syntax */
 }
