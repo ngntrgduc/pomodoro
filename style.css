@@ -2,57 +2,76 @@
     --bg: #1e1e2e;
     --text-bg: #cdd6f4;
     --main: 	#89b4fa;
+    --duration: 0.6s;
 }
 
 html {
     background-color: var(--bg);
     color: var(--text-bg);
-    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 body {
     overflow: hidden;
     height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .timer {
     height: 200px;
-    width: 670px;
+    width: 50vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
+.hidden {
+    color: var(--bg);
+}
+
 #time {
     font-family: 'Roboto', sans-serif;
-    font-size: 150px;
-    transition-duration: 0.4s;
+    font-size: calc(15px + 8vw);
+    transition-duration: var(--duration);
 }
 
 .main {
-    height: 100vh;
+    height: 50vh;
+    width: 50vw;
     display: flex;
     gap: 20px;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    align-content: center;
+}
+
+.main:hover .hidden {
+    color: var(--text-bg);    
+}
+
+.button:hover .hidden {
+    color: var(--main);
 }
 
 .utils {
     width: 500px;
+    width: 50vw;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
 a {
-    font-size: 50px;
-    transition-duration: 0.4s;
+    padding: 5px;
+    font-size: 4vw;
+    transition-duration: var(--duration);
 }
 
 a:hover {
     color: var(--main);
-    transition-duration: 0.4s;
 }
 
 .prevent-select {

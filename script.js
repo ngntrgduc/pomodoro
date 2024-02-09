@@ -13,14 +13,20 @@ function padding(number) {
 function display(minutes, seconds = 0) {
     if (seconds == 60) seconds = 0; // What time: 40:60 ?
     let time = padding(minutes) + ':' + padding(seconds);
-    let hour = 0;
+    
+    // let hour = 0;
+    // if (minutes >= 60) {
+    //     while (minutes >= 60) {
+    //         hour += 1;
+    //         minutes -= 60;
+    //     }
+    //     time = hour.toString() + ':' + padding(minutes) + ':' + padding(seconds);
+    // }
+
     if (minutes >= 60) {
-        while (minutes >= 60) {
-            hour += 1;
-            minutes -= 60;
-        }
-        time = hour.toString() + ':' + padding(minutes) + ':' + padding(seconds);
+        time = Math.floor(minutes/60).toString() + ':' + padding(minutes%60) + ':' + padding(seconds);
     }
+
     document.getElementById("time").innerHTML = time;
     document.title = time; // Update title
 }

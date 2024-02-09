@@ -14,12 +14,18 @@
 <body>
     <div class="main">
         <div class="timer">
-            <a class="fa-solid fa-minus" onclick="decreaseTime()"></a>
+            <div class="button">
+                <a class="fa-solid fa-minus hidden" onclick="decreaseTime()"></a>
+            </div>
+
             <p id="time" class="prevent-select"></p>
-            <a class="fa-solid fa-plus" onclick="increaseTime()"></a>
+            
+            <div class="button">
+                <a class="fa-solid fa-plus hidden" onclick="increaseTime()"></a>
+            </div>
         </div>
         
-        <div class="utils">
+        <div class="utils hidden">
             <a class="fa-solid fa-play" id="play" onclick="start()"></a>
             <a class="fa-solid fa-rotate-right" onclick="reset()"></a>
             <a class="fa-solid fa-stopwatch" onclick="stopwatch()""></a>
