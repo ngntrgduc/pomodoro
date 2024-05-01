@@ -6,10 +6,18 @@ I have found some beautiful pomodoro websites like [Tomato Timers](https://www.t
 ## Features
 - **Minimalist**
 - Aesthetic look
-- Motivation sound when end a pomodoro
+- Motivation sound when end a pomodoro (default: on)
 - Easy to config. You can fork this repo and make your own Pomodoro website
 - Has stopwatch for **flowmodoro/flowtime**
 - Change the title automatically to the time at present, easy on the eyes
+- Keyboard shortcuts
+    - `-`, `j`: decrease timer
+    - `+`/`=`, `k`: increase timer
+    - `space bar`: toggle play/pause
+    - `r`: ***r***eset timer (new pomodoro)
+    - `s`: ***s***topwatch
+    - `b`: take a ***b***reak
+    - `a`: toggle ***a***larm
 
 ## Material
 - Theme: [Catppuccin - Mocha](https://github.com/catppuccin/catppuccin)

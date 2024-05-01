@@ -4,7 +4,7 @@ let minutes = startMinutes;
 let running = false;
 let paused = true;
 let relaxing = false;
-let bell = false;
+let bell = true;
 
 function padding(number) {
     return number.toString().padStart(2, '0');
@@ -13,15 +13,6 @@ function padding(number) {
 function display(minutes, seconds = 0) {
     if (seconds == 60) seconds = 0; // What time: 40:60 ?
     let time = padding(minutes) + ':' + padding(seconds);
-    
-    // let hour = 0;
-    // if (minutes >= 60) {
-    //     while (minutes >= 60) {
-    //         hour += 1;
-    //         minutes -= 60;
-    //     }
-    //     time = hour.toString() + ':' + padding(minutes) + ':' + padding(seconds);
-    // }
 
     if (minutes >= 60) {
         time = Math.floor(minutes/60).toString() + ':' + padding(minutes%60) + ':' + padding(seconds);
@@ -150,4 +141,27 @@ function stopwatch() {
     }
 }
 
-reset(); // Initial
+
+document.addEventListener('DOMContentLoaded', function() {
+    reset(); // Initial
+
+    function handleKeyDown(e) {
+        if (e.key === ' ') {
+            start();
+        } else if (e.key === 'r') {
+            reset();
+        } else if (e.key === 's') {
+            stopwatch();
+        } else if (e.key === 'b') {
+            relax();
+        } else if (e.key === 'a') {
+            toggleBell()
+        } else if (e.key === '+' || e.key === '=' || e.key === `k`) {
+            increaseTime();
+        } else if (e.key === '-' || e.key === 'j') {
+            decreaseTime();
+        }
+    }
+
+    document.addEventListener('keydown', handleKeyDown);
+});
