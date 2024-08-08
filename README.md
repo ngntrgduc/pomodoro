@@ -11,13 +11,14 @@ I have found some beautiful pomodoro websites like [Tomato Timers](https://www.t
 - Has stopwatch for **flowmodoro/flowtime**
 - Change the title automatically to the time at present, easy on the eyes
 - Keyboard shortcuts
-    - `-`, `j`: decrease timer
-    - `+`/`=`, `k`: increase timer
-    - `space bar`: toggle play/pause
-    - `r`: ***r***eset timer (new pomodoro)
-    - `s`: ***s***topwatch
-    - `b`: take a ***b***reak
-    - `a`: toggle ***a***larm
+    - `-`, `j`: Decrease timer
+    - `+`/`=`, `k`: Increase timer
+    - `space`: Play/Pause timer
+    - `r`: ***R***eset timer
+    - `s`: ***S***topwatch
+    - `b`: Take a ***b***reak
+    - `a`: Toggle ***a***larm
+    - `?`: Show keyboard shortcuts
 
 ## Material
 - Theme: [Catppuccin - Mocha](https://github.com/catppuccin/catppuccin)

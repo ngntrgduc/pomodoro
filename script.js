@@ -141,27 +141,51 @@ function stopwatch() {
     }
 }
 
+function toggleShortcutOverlay(displayStyle) {
+    document.getElementById('shortcutOverlay').style.display = displayStyle;
+}
+
+function handleKeyDown(event) {
+    switch (event.key) {
+        case ' ':
+            start();
+            break;
+        case 'r':
+            reset();
+            break;
+        case 's':
+            stopwatch();
+            break;
+        case 'b':
+            relax();
+            break;
+        case 'a':
+            toggleBell();
+            break;
+        case '+':
+        case '=': 
+        case `k`:
+            increaseTime();
+            break;
+        case '-':
+        case 'j':
+            decreaseTime();
+            break;      
+        case '?':
+            toggleShortcutOverlay('flex');
+            break;
+        case '/':
+            if (event.shiftKey) {
+                toggleShortcutOverlay('flex');
+            }
+            break;
+        case 'Escape':
+            toggleShortcutOverlay('none');
+            break;
+    }
+}
 
 document.addEventListener('DOMContentLoaded', function() {
     reset(); // Initial
-
-    function handleKeyDown(e) {
-        if (e.key === ' ') {
-            start();
-        } else if (e.key === 'r') {
-            reset();
-        } else if (e.key === 's') {
-            stopwatch();
-        } else if (e.key === 'b') {
-            relax();
-        } else if (e.key === 'a') {
-            toggleBell()
-        } else if (e.key === '+' || e.key === '=' || e.key === `k`) {
-            increaseTime();
-        } else if (e.key === '-' || e.key === 'j') {
-            decreaseTime();
-        }
-    }
-
     document.addEventListener('keydown', handleKeyDown);
 });
