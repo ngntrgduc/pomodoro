@@ -11,7 +11,7 @@ function padding(number) {
 }
 
 function display(minutes, seconds = 0) {
-    if (seconds == 60) seconds = 0; // What time: 40:60 ?
+    seconds = seconds % 60; // What time: 40:60 ?
     let time = padding(minutes) + ':' + padding(seconds);
 
     if (minutes >= 60) {
@@ -22,11 +22,15 @@ function display(minutes, seconds = 0) {
     document.title = time; // Update title
 }
 
-function alertMessage() {
+async function playSound() {
     if (bell) {
         let audio = new Audio("assets/sounds/levelUp.wav");
-        audio.play();
+        await audio.play();
     }
+}
+
+async function alertMessage() {
+    await playSound();
     alert("＼(＾▽＾)／"); // Yayyyyyyyy
     clearInterval(interval);
 }
@@ -39,13 +43,8 @@ function resetPlayButton() {
 }
 
 function changePlayPauseButton() {
-    if (!paused) {
-        paused = true;
-        document.getElementById("play").className = "fa-solid fa-play";
-    } else {
-        paused = false;
-        document.getElementById("play").className = "fa-solid fa-stop";
-    }
+    paused = !paused;
+    document.getElementById("play").className = paused ? "fa-solid fa-play" : "fa-solid fa-stop";
 }
 
 function start() {
@@ -54,7 +53,7 @@ function start() {
         running = true;
         minutes = startMinutes;
         let seconds = 60;
-        interval = setInterval(function () {
+        interval = setInterval(() => {
             if (minutes <= 0 && seconds == 60) {
                 resetPlayButton(); // For better UI
                 alertMessage();
@@ -112,13 +111,8 @@ function decreaseTime() {
 }
 
 function toggleBell() {
-    if (!bell) {
-        bell = true;
-        document.getElementById("bell").className = "fa-solid fa-bell";
-    } else {
-        bell = false;
-        document.getElementById("bell").className = "fa-regular fa-bell";
-    }
+    bell = !bell;
+    document.getElementById("bell").className = bell ? "fa-solid fa-bell" : "fa-regular fa-bell";
 }
 
 function stopwatch() {
@@ -128,7 +122,7 @@ function stopwatch() {
         running = true;
         minutes = startMinutes;
         let seconds = 0;
-        interval = setInterval(function () {
+        interval = setInterval(() => {
             if (!paused) {
                 seconds++;
             }
