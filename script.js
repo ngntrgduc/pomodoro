@@ -6,6 +6,8 @@ let paused = true;
 let relaxing = false;
 let bell = true;
 
+const audio = new Audio("assets/sounds/levelUp.wav");
+
 function padding(number) {
     return number.toString().padStart(2, '0');
 }
@@ -24,7 +26,6 @@ function display(minutes, seconds = 0) {
 
 async function playSound() {
     if (bell) {
-        let audio = new Audio("assets/sounds/levelUp.wav");
         await audio.play();
     }
 }
