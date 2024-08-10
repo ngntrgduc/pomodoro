@@ -136,10 +136,6 @@ function stopwatch() {
     }
 }
 
-function toggleShortcutOverlay(displayStyle) {
-    document.getElementById('shortcutOverlay').style.display = displayStyle;
-}
-
 function handleKeyDown(event) {
     switch (event.key) {
         case ' ':
@@ -165,17 +161,6 @@ function handleKeyDown(event) {
         case '-':
         case 'j':
             decreaseTime();
-            break;      
-        case '?':
-            toggleShortcutOverlay('flex');
-            break;
-        case '/':
-            if (event.shiftKey) {
-                toggleShortcutOverlay('flex');
-            }
-            break;
-        case 'Escape':
-            toggleShortcutOverlay('none');
             break;
     }
 }
