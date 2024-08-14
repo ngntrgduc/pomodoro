@@ -169,3 +169,5 @@ document.addEventListener('DOMContentLoaded', function() {
     reset(); // Initial
     document.addEventListener('keydown', handleKeyDown);
 });
+
+document.addEventListener("contextmenu", (event) => event.preventDefault());
