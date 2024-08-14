@@ -2,7 +2,7 @@
     --bg: #11111b;
     --text-bg: #cdd6f4;
     --main: 	#89b4fa;
-    --duration: 0.6s;
+    --duration: 0.4s;
 }
 
 html {
@@ -36,7 +36,6 @@ body {
 #time {
     font-family: 'Roboto', sans-serif;
     font-size: calc(15px + 8vw);
-    transition-duration: var(--duration);
 }
 
 .main {
@@ -72,6 +71,7 @@ a {
 
 a:hover {
     color: var(--main);
+    cursor: pointer;
 }
 
 .prevent-select {
