@@ -74,7 +74,7 @@ function start() {
     }
 }
 
-function reset(time = 40) {
+function reset(time = 45) {
     startMinutes = time;
     display(startMinutes);
     clearInterval(interval);
