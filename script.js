@@ -1,5 +1,5 @@
 let interval;
-let startMinutes = 40;
+let startMinutes = 45;
 let minutes = startMinutes;
 let running = false;
 let paused = true;
