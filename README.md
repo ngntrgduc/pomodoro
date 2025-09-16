@@ -1,14 +1,13 @@
 # Pomodoro
 
 ## Why reinvent the wheel?
-I have found some beautiful pomodoro websites like [Tomato Timers](https://www.tomatotimers.com/), [Pomodoro Kitty](https://pomodorokitty.com/), [Pomofocus](https://pomofocus.io/), [studywithme.io](https://studywithme.io/aesthetic-pomodoro-timer/)... But there are not minimalist, so I have created one.
+I found some beautiful pomodoro websites like [Tomato Timers](https://www.tomatotimers.com/), [Pomodoro Kitty](https://pomodorokitty.com/), [Pomofocus](https://pomofocus.io/), [studywithme.io](https://studywithme.io/aesthetic-pomodoro-timer/)... But those aren't minimalist, so I created one.
 
 ## Features
-- **Minimalist**
-- Aesthetic look
+- **Minimalist**, Aesthetic
 - Motivation sound when end a pomodoro (default: on)
 - Easy to config. You can fork this repo and make your own Pomodoro website 🔥
-- Has stopwatch for **flowmodoro/flowtime**
+- **Flowmodoro/Flowtime** mode
 - Change the title automatically to the time at present, easy on the eyes
 - Keyboard shortcuts:
 
@@ -16,11 +15,11 @@ I have found some beautiful pomodoro websites like [Tomato Timers](https://www.t
 |-------------------|--------------------------|
 | `-`, `j`          | Decrease timer           |
 | `+`/`=`, `k`      | Increase timer           |
-| `space`           | Play/Pause timer         |
-| `r`               | **R**eset timer          |
-| `s`               | **S**topwatch            |
-| `b`               | Take a **b**reak         |
-| `a`               | Toggle **a**larm         |
+| `space`           | Start/Pause timer        |
+| `r`               | Reset timer              |
+| `R`               | Relax for 5 minutes      |
+| `f`               | **F**lowmodoro           |
+| `b`               | Toggle **b**ell          |
 
 ## Material
 - Theme: [Catppuccin - Mocha](https://github.com/catppuccin/catppuccin)
