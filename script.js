@@ -144,13 +144,13 @@ function handleKeyDown(event) {
         case 'r':
             reset();
             break;
-        case 's':
+        case 'f':
             stopwatch();
             break;
-        case 'b':
+        case 'R':
             relax();
             break;
-        case 'a':
+        case 'b':
             toggleBell();
             break;
         case '+':
